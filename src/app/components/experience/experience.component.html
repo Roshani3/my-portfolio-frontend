@@ -1,0 +1,78 @@
+<section id="experience" class="section-padding bg-dark-2">
+  <div class="container">
+    <!-- Unified Section Header -->
+    <div class="row mb-5" data-aos="fade-up">
+      <div class="col-12 text-center">
+        <h2 class="display-5 mb-3 fw-bold text-white">Experience <span class="text-accent">&amp; Education</span></h2>
+        <div class="underline mx-auto"></div>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <!-- Left Column: Experience -->
+      <div class="col-lg-6">
+        <h3 class="h4 mb-4 text-white d-flex align-items-center" data-aos="fade-right">
+          <i class="bi bi-briefcase-fill text-accent me-3"></i> Work Experience
+        </h3>
+        <div class="resume-timeline">
+          <div *ngFor="let exp of experience; let i = index" class="resume-item"
+               data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+            <div class="glass-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-2 exp-header">
+                <h5 class="text-accent fw-bold mb-0">{{exp.role}}</h5>
+                <span class="badge bg-accent-soft text-accent">{{exp.period}}</span>
+              </div>
+              <h6 class="text-white mb-3">{{exp.company}}</h6>
+
+              <ul class="list-unstyled mb-4">
+                <li *ngFor="let point of exp.description" class="text-light-muted mb-2 small d-flex">
+                  <i class="bi bi-dot text-accent me-2 fs-4"></i>
+                  <span class="mt-1">{{point}}</span>
+                </li>
+              </ul>
+
+              <!-- Tech Tags -->
+              <div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top border-secondary border-opacity-25">
+                <span *ngFor="let tag of exp.techUsed" class="tag-badge">{{tag}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Education -->
+      <div class="col-lg-6">
+        <h3 class="h4 mb-4 text-white d-flex align-items-center" data-aos="fade-left">
+          <i class="bi bi-mortarboard-fill text-accent me-3"></i> Education
+        </h3>
+        <div class="resume-timeline">
+          <!-- B.Tech -->
+          <div class="resume-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="glass-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-2 exp-header">
+                <h5 class="text-accent fw-bold mb-0">Bachelor Of Technology</h5>
+                <span class="badge bg-accent-soft text-accent">2021-2024</span>
+              </div>
+              <h6 class="text-white mb-1">Computer Engineering</h6>
+              <p class="text-light-muted small mb-2">R.C. Patel Institute Of Technology, Shirpur</p>
+              <div class="badge bg-white text-dark fw-bold px-3 py-2">CGPA: 8.95</div>
+            </div>
+          </div>
+
+          <!-- Diploma -->
+          <div class="resume-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="glass-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-2 exp-header">
+                <h5 class="text-accent fw-bold mb-0">Diploma</h5>
+                <span class="badge bg-accent-soft text-accent">2018-2021</span>
+              </div>
+              <h6 class="text-white mb-1">Computer Engineering</h6>
+              <p class="text-light-muted small mb-2">S.S.V.P.S.B.S.D Polytechnic College, Dhule</p>
+              <div class="badge bg-white text-dark fw-bold px-3 py-2">Percentage: 91.60%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<section id="projects" class="section-padding">
+  <div class="container">
+    <div class="row mb-5" data-aos="fade-up">
+      <div class="col-12 text-center">
+        <h2 class="display-5 mb-3 fw-bold text-white">Featured <span class="text-accent">Projects</span></h2>
+        <div class="underline mx-auto"></div>
+      </div>
+    </div>
+
+    <div class="row g-5 justify-content-center">
+      <div *ngFor="let project of projects; let i = index" class="col-lg-10"
+           data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+        <div class="project-card glass-card overflow-hidden">
+          <!-- Top: Cinematic Image Container -->
+          <div class="project-image-wrapper">
+            <img [src]="project.image" [alt]="project.title" class="project-img">
+            <div class="project-overlay">
+              <div class="d-flex gap-3">
+                <a href="https://conference.azurewebsites.net/auth/login" class="btn btn-accent-circle">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: Detailed Content -->
+          <div class="project-content p-4 p-md-5">
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span *ngFor="let tag of project.tags" class="badge-custom">{{tag}}</span>
+            </div>
+
+            <h3 class="display-6 mb-3 text-white fw-bold">{{project.title}}</h3>
+            <p class="text-light-muted fs-5 mb-4 lh-lg bio-text">{{project.description}}</p>
+
+            <div class="row g-4">
+              <div class="col-md-6 col-12" *ngFor="let feature of project.features">
+                <div class="feature-item d-flex align-items-center">
+                  <div class="dot me-3"></div>
+                  <span class="text-white">{{feature}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

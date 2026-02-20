@@ -1,0 +1,80 @@
+<!-- <section id="contact" class="section-padding bg-dark-2"> -->
+  <section id="contact" class="section-padding">
+  <div class="container">
+    <div class="row mb-5" data-aos="fade-up">
+      <div class="col-12 text-center">
+        <h2 class="display-5 mb-3 fw-bold text-white">Get In <span class="text-accent">Touch</span></h2>
+        <div class="underline mx-auto"></div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+        <div class="glass-card contact-container p-4 p-md-5 overflow-hidden">
+          <div class="row g-5">
+            <div class="col-md-5" data-aos="fade-right">
+              <h3 class="h4 mb-4 text-white fw-bold">Contact Information</h3>
+              <p class="text-light-muted mb-5 fs-6 lh-lg">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+
+              <div class="contact-methods">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box-accent me-3"><i class="bi bi-envelope-at-fill"></i></div>
+                  <div>
+                    <h6 class="mb-0 text-white small fw-bold text-uppercase tracking-wider">Email</h6>
+                    <p class="text-accent mb-0">{{email}}</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box-accent me-3"><i class="bi bi-telephone-fill"></i></div>
+                  <div>
+                    <h6 class="mb-0 text-white small fw-bold text-uppercase tracking-wider">Mobile</h6>
+                    <p class="text-accent mb-0">+91 90215 19127</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 mt-5">
+                <a [href]="github" target="_blank" class="social-circle-premium"><i class="bi bi-github"></i></a>
+                <a [href]="linkedin" target="_blank" class="social-circle-premium"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="col-md-7" data-aos="fade-left">
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+                <div class="mb-4">
+                  <label class="form-label text-white small fw-bold mb-2">Full Name</label>
+                  <input type="text" class="form-control premium-input" placeholder="Enter your name" formControlName="name">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label text-white small fw-bold mb-2">Email Address</label>
+                  <input type="email" class="form-control premium-input" placeholder="example@gmail.com" formControlName="email">
+                </div>
+                <div class="mb-4">
+                  <label class="form-label text-white small fw-bold mb-2">Message</label>
+                  <textarea class="form-control premium-input" rows="5" placeholder="I am open to new opportunities and collaborations. Please feel free to connect."
+                  formControlName="message"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-accent-gradient w-100 py-3 fw-bold tracking-wider"
+                        [disabled]="contactForm.invalid || isSubmitting">
+                  <span *ngIf="!isSubmitting">SEND MESSAGE <i class="bi bi-send-fill ms-2"></i></span>
+                  <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm" role="status"></span>
+                </button>
+
+                <div *ngIf="status === 'success'" class="alert alert-success mt-4 glass-alert d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                  <span>Thank you! Your message has been sent successfully.</span>
+                </div>
+
+                <div *ngIf="status === 'error'" class="alert alert-danger mt-4 glass-alert d-flex align-items-center bg-danger-subtle text-danger border-danger">
+                  <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+                  <span>Oops! Something went wrong. Please try again later.</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
